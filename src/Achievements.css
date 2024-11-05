@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Achievements.css */
 
 /* Container styles */
@@ -14,10 +15,73 @@
     color: #2c3e50;
     text-align: center;
     margin-bottom: 30px;
+=======
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #002b5b;
+}
+
+.upload-button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.card-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    flex: 1 1 calc(45% - 20px);
+    max-width: 380px;
+    min-height: 200px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+}
+
+.card h3 {
+    font-size: 1.8rem;
+    color: #004080;
+    margin: 10px 0 0;
+}
+
+.card i {
+    font-size: 3rem;
+    color: #004080;
+    margin-bottom: 10px;
+}
+
+.card-description {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 8px;
+>>>>>>> e45b8c888ed6d7ee5982ddfa38851f1edb77e600
 }
 
 /* Button styles */
 .upload-button {
+<<<<<<< HEAD
     padding: 10px 20px;
     background-color: #3498db;
     color: #fff;
@@ -105,4 +169,56 @@
 
 .card:nth-child(4) {
     animation-delay: 0.4s;
+=======
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    background-color: #004080;
+    color: white;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.upload-button:hover {
+    background-color: #003060;
+    transform: translateY(-2px);
+}
+
+.upload-button:active {
+    transform: translateY(1px);
+}
+
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #777;
+    padding: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        min-width: 80%;
+        max-width: 100%;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .upload-button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .card-description {
+        font-size: 0.9rem;
+    }
+>>>>>>> e45b8c888ed6d7ee5982ddfa38851f1edb77e600
 }

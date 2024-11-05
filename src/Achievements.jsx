@@ -12,10 +12,7 @@ const Achievements = () => {
     return (
         <div>
             <h2>Achievements</h2>
-            <Link to="/upload">
-                <button className="upload-button">Upload Achievement</button>
-            </Link>
-
+            
             <div className="card-container">
                 {['Symposium', 'Hackathon', 'Paper', 'Patent'].map((type) => (
                     <div className="card" key={type} onClick={() => handleCardClick(type)}>
@@ -23,7 +20,13 @@ const Achievements = () => {
                     </div>
                 ))}
             </div>
+            <Link to="/upload">
+                <button className="upload-button">Upload Achievement</button>
+            </Link>
+
         </div>
+
+        
     );
 };
 

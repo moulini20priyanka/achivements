@@ -5,16 +5,16 @@ import './AchievementDetails.css';
 const AchievementDetails = () => {
     const { type } = useParams();
 
-    // Define headers and fields based on achievement type
     const tableConfig = {
         Symposium: [
             { header: "S.No", field: "id" },
-            { header: "Project Title", field: "title" },
+            { header: "Event Name", field: "title" },
+            { header: "Event Date", field: "eventDate" },
             { header: "Team Members", field: "teamMembers" },
-            { header: "Technology Used", field: "technologyUsed" },
-            { header: "Start Date", field: "startDate" },
-            { header: "End Date", field: "endDate" },
-            { header: "Outcomes", field: "outcomes" },
+            { header: "Location", field: "location" },
+            { header: "Organizer(s)", field: "organizer" },
+            { header: "Event Type", field: "eventType" },
+            { header: "Achievement", field: "achievement" },
             { header: "Document", field: "documentLink" },
         ],
         Patent: [
@@ -26,7 +26,7 @@ const AchievementDetails = () => {
             { header: "Start Date", field: "startDate" },
             { header: "Document", field: "documentLink" },
         ],
-        Paper : [
+        "Paper Publication": [
             { header: "S.No", field: "id" },
             { header: "Paper Title", field: "title" },
             { header: "Authors Name", field: "teamMembers" },
@@ -48,23 +48,59 @@ const AchievementDetails = () => {
         ],
     };
 
-    // Sample data for demonstration purposes
-    const data = [
-        {
-            id: 1,
-            serialNo: "12345",
-            title: 'Advancements in Machine Learning Algorithms',
-            teamMembers: 'Alice Johnson, Bob Smith, Charlie Brown, David Wilson, Eve Davis, Frank Miller',
-            conferenceDetails: 'International Journal of Machine Learning',
-            startDate: '2024-01-15',
-            endDate: '2024-01-20',
-            outcomes: 'Improved accuracy in predictions',
-            technologyUsed: 'Machine Learning',
-            documentLink: '/path/to/document'
-        }
-    ];
+    const data = {
+        Symposium: [
+            {
+                id: 1,
+                title: 'Innovative Tech Summit',
+                eventDate: '2024-03-12',
+                teamMembers: 'John Doe, Jane Smith, Emily Davis',
+                location: 'San Francisco, CA',
+                organizer: 'Tech Innovations Group',
+                eventType: 'Conference',
+                achievement: 'Best Tech Innovation',
+                documentLink: '/path/to/document'
+            }
+        ],
+        Patent: [
+            {
+                id: 2,
+                serialNo: "12345",
+                title: 'Next Gen AI Technology',
+                teamMembers: 'Alice Johnson, Bob Smith',
+                technologyUsed: 'Artificial Intelligence',
+                startDate: '2023-01-10',
+                documentLink: '/path/to/document'
+            }
+        ],
+        "Paper Publication": [
+            {
+                id: 3,
+                title: 'Advancements in Machine Learning Algorithms',
+                teamMembers: 'Charlie Brown, Eve Davis',
+                conferenceDetails: 'International Journal of Machine Learning',
+                startDate: '2024-01-15',
+                technologyUsed: 'Machine Learning',
+                outcomes: 'Improved accuracy in predictions',
+                documentLink: '/path/to/document'
+            }
+        ],
+        Hackathon: [
+            {
+                id: 4,
+                title: 'Smart City Solutions',
+                teamMembers: 'David Wilson, Frank Miller',
+                technologyUsed: 'IoT',
+                startDate: '2024-02-20',
+                endDate: '2024-02-21',
+                outcomes: 'Awarded Best Innovation',
+                documentLink: '/path/to/document'
+            }
+        ]
+    };
 
     const headers = tableConfig[type] || [];
+    const achievementData = data[type] || [];
 
     return (
         <div>
@@ -78,7 +114,7 @@ const AchievementDetails = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {data.map((item, index) => (
+                    {achievementData.map((item) => (
                         <tr key={item.id}>
                             {headers.map((col) => (
                                 <td key={col.field}>

@@ -1,0 +1,21 @@
+.achievement-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.achievement-table th, .achievement-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.achievement-table th {
+    background-color: #002b5b;
+    color: white;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #004080;
+}
